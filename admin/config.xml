@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="settings" label="COM_DOLICONNECT_SETTINGS_LABEL" description="COM_DOLICONNECT_SETTINGS_DESC">
+		<field name="url" type="text" label="COM_DOLICONNECT_URL_LABEL" description="COM_DOLICONNECT_URL_DESC" default="" />
+		<field name="key" type="text" label="COM_DOLICONNECT_KEY_LABEL" description="COM_DOLICONNECT_KEY_DESC" default="" />
+	</fieldset>
+</config>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.10.0" method="upgrade">
+
+	<name>COM_DOLICONNECT</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>Mars 2022</creationDate>
+	<author>Mikael Carlavan</author>
+	<authorEmail>contact@mika-carl.fr</authorEmail>
+	<authorUrl>http://www.mika-carl.fr</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<!--  The version string is recorded in the components table -->
+	<version>1.0.0</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>COM_DOLICONNECT_DESCRIPTION</description>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>doliconnect.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+		<folder>helpers</folder>
+	</files>
+
+    <languages folder="site/language">
+		<language tag="fr-FR">fr-FR/fr-FR.com_doliconnect.ini</language>
+    </languages>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link='option=com_doliconnect'>COM_DOLICONNECT_MENU</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_doliconnect&amp;view=logs" view="logs">COM_DOLICONNECT_LOGS_MENU</menu>
+		</submenu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
+			<folder>views</folder>
+			<folder>sql</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<filename>doliconnect.php</filename>
+			<filename>controller.php</filename>
+		</files>
+
+		<languages folder="admin/language">
+			<language tag="fr-FR">fr-FR/fr-FR.com_doliconnect.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_doliconnect.sys.ini</language>
+		</languages>
+	</administration>
+
+</extension>
